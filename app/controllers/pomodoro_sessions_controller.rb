@@ -13,6 +13,6 @@ class PomodoroSessionsController < ApplicationController
   end
 
   def pomodoro_session_params
-    params.expect(pomodoro_session: [:session_type, :started_at, :ended_at, :planned_duration_seconds, :status])
+    params.expect(pomodoro_session: [ :session_type, :started_at, :ended_at, :planned_duration_seconds, :status ])
   end
 end
