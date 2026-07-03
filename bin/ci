@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby.exe
 require_relative "../config/boot"
+require_relative "../config/application"
+require "importmap/commands"
 require "active_support/continuous_integration"
 
 CI = ActiveSupport::ContinuousIntegration
