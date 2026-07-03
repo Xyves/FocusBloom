@@ -41,18 +41,18 @@ gem "thruster", require: false
 gem "image_processing", "~> 1.2"
 
 # logging
-gem 'amazing_print'
+gem "amazing_print"
 
 # authorization
-gem 'pundit'
+gem "pundit"
 
-gem 'devise'
+gem "devise"
 
-gem 'devise-jwt'
+gem "devise-jwt"
 
-gem 'rack-cors'
+gem "rack-cors"
 
-gem 'rails_semantic_logger'
+gem "rails_semantic_logger"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -71,20 +71,19 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem 'annotaterb'
-  gem 'rubocop', require: false
-  gem 'rubocop-rails', require: false
-
+  gem "annotaterb"
+  gem "rubocop", require: false
+  gem "rubocop-rails", require: false
 end
 group :development, :test do
-  gem 'bullet'
-  gem 'debug', platforms: %i[mri windows]
-  gem 'dotenv-rails'
-  gem 'factory_bot_rails'
-  gem 'overcommit'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
-  gem 'simplecov', require: false
+  gem "bullet"
+  gem "debug", platforms: %i[mri windows]
+  gem "dotenv-rails"
+  gem "factory_bot_rails"
+  gem "overcommit"
+  gem "rspec-rails"
+  gem "shoulda-matchers"
+  gem "simplecov", require: false
 end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
