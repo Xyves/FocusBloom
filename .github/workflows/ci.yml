@@ -86,12 +86,27 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Run tests
+      - name: Prepare database
+        run: bin/rails db:prepare
         env:
           RAILS_ENV: test
-          # RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
-          # REDIS_URL: redis://localhost:6379/0
-        run: bin/rails db:test:prepare test
+
+      - name: Run specs
+        run: bundle exec rspec
+        env:
+          RAILS_ENV: test
+      - name: Prepare database
+        run: bin/rails db:prepare
+        env:
+          RAILS_ENV: test
+
+      - name: Keep screenshots from failed system tests
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: screenshots
+          path: ${{ github.workspace }}/tmp/capybara
+          if-no-files-found: ignore
 
   system-test:
     runs-on: ubuntu-latest
@@ -114,17 +129,20 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Run System Tests
+      - name: Prepare test database
         env:
           RAILS_ENV: test
-          # RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
-          # REDIS_URL: redis://localhost:6379/0
-        run: bin/rails db:test:prepare test:system
+        run: bin/rails db:prepare
+
+      - name: Run system tests
+        env:
+          RAILS_ENV: test
+        run: bundle exec rspec
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: screenshots
-          path: ${{ github.workspace }}/tmp/screenshots
+          path: ${{ github.workspace }}/tmp/capybara
           if-no-files-found: ignore
