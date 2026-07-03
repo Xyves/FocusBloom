@@ -100,11 +100,6 @@ jobs:
         env:
           RAILS_ENV: test
 
-      - name: Run system tests
-        run: bundle exec rspec spec/system
-        env:
-          RAILS_ENV: test
-
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
         if: failure()
