@@ -1,0 +1,2 @@
+class PomodoroSession < ApplicationRecord
+end
