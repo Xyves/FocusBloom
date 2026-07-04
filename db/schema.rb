@@ -10,5 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 0) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_03_190901) do
+  create_table "pomodoro_sessions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.date "ended_at"
+    t.integer "planned_duration_seconds", default: 0
+    t.integer "session_type", default: 0, null: false
+    t.date "started_at", default: "2026-07-03"
+    t.integer "status", default: 0, null: false
+    t.datetime "updated_at", null: false
+  end
 end
