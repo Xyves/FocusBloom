@@ -6,10 +6,7 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-
-* System dependencies
-
-* Configuration
+ruby-4.0.2
 
 * Database creation
 
