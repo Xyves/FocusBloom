@@ -77,7 +77,6 @@ group :development do
 end
 group :development, :test do
   gem "bullet"
-  gem "debug", platforms: %i[mri windows]
   gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "overcommit"
@@ -93,3 +92,5 @@ end
 
 gem "tailwindcss-rails", "~> 4.6"
 gem "foreman"
+
+gem "daisyui", "~> 1.2"
