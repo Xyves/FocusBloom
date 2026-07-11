@@ -83,6 +83,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "shoulda-matchers"
   gem "simplecov", require: false
+  gem "erb_lint"
 end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
