@@ -4,7 +4,7 @@ import {readSettings} from "utils/timer_settings"
 const toMinutes = (seconds) => seconds / 60
 
 export default class extends Controller {
-    static targets = ['focusDuration', 'shortBreakDuration', 'longBreakDuration', 'longBreakInterval']
+    static targets = ['modal','focusDuration', 'shortBreakDuration', 'longBreakDuration', 'longBreakInterval']
 
     connect() {
         const settings = readSettings()
@@ -25,7 +25,19 @@ export default class extends Controller {
                 LONG_BREAK_INTERVAL: parseInt(this.longBreakIntervalTarget.value),
             }
         })
-        console.log('applied settings')
+        this.modalTarget.close()
 
     }
+ switchPanel(event) {
+    const button = event.currentTarget
+    const panelId = button.dataset.panel
+
+    document
+        .querySelectorAll(".settings-panel")
+        .forEach(panel => panel.classList.toggle("hidden", panel.id !== panelId))
+
+    document
+        .querySelectorAll("aside button")
+        .forEach(button => button.classList.toggle("menu-active", button === event.currentTarget))
+}
 }

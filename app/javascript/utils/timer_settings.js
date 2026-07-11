@@ -2,9 +2,10 @@ export const SETTINGS_KEY = "timer_settings"
 
 export const DEFAULT_SETTINGS = {
     FOCUS: 25 * 60,
-    SHORT_BREAK: 15 * 60,
+    SHORT_BREAK: 10 * 60,
     LONG_BREAK: 40 * 60,
     LONG_BREAK_INTERVAL: 4,
+    VARIANT:"FOCUS"
 }
 
 export function readSettings() {
