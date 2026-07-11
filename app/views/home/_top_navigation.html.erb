@@ -1,0 +1,19 @@
+<div id="navigation" class="flex justify-between [&>div]:text-white select-none  gap-6 text-bold">
+
+  <div data-countdown-target="timerVariant"
+       data-action="click->countdown#selectVariant"
+       data-variant="FOCUS"
+       class="btn btn-outline btn-primary border-white btn-xl rounded-xl">
+  <span class="text-center">
+    Focus
+  </span>
+  </div>
+
+  <div data-countdown-target="timerVariant" data-action="click->countdown#selectVariant" data-variant="SHORT_BREAK" class="btn btn-outline btn-primary border-white btn-xl rounded-xl">
+    <span  class="text-center">Short Break</span>
+  </div>
+
+  <div data-countdown-target="timerVariant" data-action="click->countdown#selectVariant" data-variant="LONG_BREAK"  class="btn btn-outline btn-primary border-white btn-xl rounded-xl">
+    <span class="text-center">Long break </span>
+  </div>
+</div>
