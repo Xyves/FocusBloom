@@ -1,0 +1,28 @@
+<div id="timers-panel" class="settings-panel">
+  <div class="w-full [&_.label]:whitespace-normal flex flex-col gap-2 flex-1">
+
+    <fieldset class="fieldset">
+      <label class="label select-none" for="focus">Focus (minutes)</label>
+      <input data-settings-target="focusDuration" type="number" id="focus" class="input" min="1" />
+    </fieldset>
+
+    <fieldset class="fieldset">
+      <label class="label select-none" for="short-break">Short Break (minutes)</label>
+      <input data-settings-target="shortBreakDuration" type="number" id="short-break" class="input" min="1" />
+    </fieldset>
+
+    <fieldset class="fieldset">
+      <label class="label select-none" for="long-break">Long Break (minutes)</label>
+      <input data-settings-target="longBreakDuration" type="number" id="long-break" class="input" min="1" />
+    </fieldset>
+
+    <fieldset class="fieldset">
+      <label class="label" for="interval">
+        Use the Pomodoro sequence: Pomodoro → short break, repeat 4x, then one long break
+      </label>
+
+      <input data-settings-target="longBreakInterval" type="number" id="interval" class="input" min="1" />
+    </fieldset>
+
+  </div>
+</div>
