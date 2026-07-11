@@ -77,16 +77,21 @@ group :development do
 end
 group :development, :test do
   gem "bullet"
-  gem "debug", platforms: %i[mri windows]
   gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "overcommit"
   gem "rspec-rails"
   gem "shoulda-matchers"
   gem "simplecov", require: false
+  gem "erb_lint"
 end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "tailwindcss-rails", "~> 4.6"
+gem "foreman"
+
+gem "daisyui", "~> 1.2"
