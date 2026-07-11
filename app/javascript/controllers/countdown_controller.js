@@ -1,14 +1,14 @@
 import { Controller } from "@hotwired/stimulus"
 import {readSettings, SETTINGS_KEY} from "utils/timer_settings";
+import { DEFAULT_SETTINGS } from "utils/timer_settings"
 
 const STORAGE_KEY = "timer"
 const CYCLES_KEY = "timer_cycles"
-const DEFAULT_VARIANT = "FOCUS"
 
 export default class extends Controller {
     static targets = ['minutesDisplay', 'secondsDisplay', 'toggleButton', 'timerVariant']
 
-    currentVariant = DEFAULT_VARIANT
+    currentVariant = DEFAULT_SETTINGS.VARIANT
     isRunning = false
     timerIntervalId = null
     settings = readSettings()
