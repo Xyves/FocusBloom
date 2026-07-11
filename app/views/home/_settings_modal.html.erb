@@ -1,0 +1,39 @@
+
+<dialog id="settings_modal" class="modal">
+  <div class="modal-box space-y-6">
+    <h3 class="text-lg font-bold border-b-2 pb-1 px-2">Settings</h3>
+    <div data-controller="settings" class="flex flex-col w-full items-center justify-center">
+<!-- TODO: ADD PANELS HERE -->
+      <div class="w-3/4 [&_.label]:whitespace-normal flex flex-col gap-2">
+        <fieldset class="fieldset">
+          <label class="label select-none" for="focus">Focus (minutes)</label>
+          <input data-settings-target="focusDuration" type="number" id="focus" class="input" min="1" />
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <label class="label select-none" for="short-break">Short Break (minutes)</label>
+          <input data-settings-target="shortBreakDuration" type="number" id="short-break" class="input" min="1" />
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <label class="label  select-none" for="long-break">Long Break (minutes)</label>
+          <input data-settings-target="longBreakDuration" type="number" id="long-break" class="input" min="1" />
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <label class="label" for="interval">Use the Pomodoro sequence: Pomodoro → short break, repeat 4x, then one long break</label>
+<!-- TODO: Add info popup here         -->
+          <input data-settings-target="longBreakInterval" type="number" id="interval" class="input" min="1" />
+        </fieldset>
+        <div id="bottom-section" class="mt-10 ml-auto">
+          <button class="btn btn-primary" data-action="click->settings#applySettings" onclick="settings_modal.close()">Save</button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
