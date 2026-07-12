@@ -25,7 +25,15 @@ export default class extends Controller {
     }
 
     persistSettings(){
-        localStorage.setItem(SETTINGS_KEY, JSON.stringify(this.settings))
+        const current = readSettings()
+
+        localStorage.setItem(
+            SETTINGS_KEY,
+            JSON.stringify({
+                ...current,
+                ...this.settings
+            })
+        )
     }
 
     readCycles(){
@@ -188,11 +196,21 @@ export default class extends Controller {
     }
 
     applySettings(event) {
-        const { FOCUS, SHORT_BREAK, LONG_BREAK, LONG_BREAK_INTERVAL } = event.detail
+        const {
+            FOCUS,
+            SHORT_BREAK,
+            LONG_BREAK,
+            LONG_BREAK_INTERVAL,
+            THEME
+        } = event.detail
 
-        if (FOCUS > 0)                this.changeVariantDuration("FOCUS", FOCUS)
-        if (SHORT_BREAK > 0)          this.changeVariantDuration("SHORT_BREAK", SHORT_BREAK)
-        if (LONG_BREAK > 0)           this.changeVariantDuration("LONG_BREAK", LONG_BREAK)
+        if (THEME) {
+            this.settings.THEME = THEME
+        }
+
+        if (FOCUS > 0) this.changeVariantDuration("FOCUS", FOCUS)
+        if (SHORT_BREAK > 0) this.changeVariantDuration("SHORT_BREAK", SHORT_BREAK)
+        if (LONG_BREAK > 0) this.changeVariantDuration("LONG_BREAK", LONG_BREAK)
         if (LONG_BREAK_INTERVAL >= 1) this.changeLongBreakInterval(LONG_BREAK_INTERVAL)
     }
 }
