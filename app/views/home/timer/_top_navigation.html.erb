@@ -1,0 +1,26 @@
+<nav id="navigation"
+     class="mx-auto flex w-fit flex-wrap justify-center gap-3 sm:gap-6 select-none [&>button]:text-white">
+  <button type="button"
+          data-countdown-target="timerVariant"
+          data-action="click->countdown#selectVariant"
+          data-variant="FOCUS"
+          class="btn btn-outline btn-primary border-white rounded-xl btn-sm sm:btn-md lg:btn-xl">
+    Focus
+  </button>
+
+  <button type="button"
+          data-countdown-target="timerVariant"
+          data-action="click->countdown#selectVariant"
+          data-variant="SHORT_BREAK"
+          class="btn btn-outline btn-primary border-white rounded-xl btn-sm sm:btn-md lg:btn-xl">
+    Short Break
+  </button>
+
+  <button type="button"
+          data-countdown-target="timerVariant"
+          data-action="click->countdown#selectVariant"
+          data-variant="LONG_BREAK"
+          class="btn btn-outline btn-primary border-white rounded-xl btn-sm sm:btn-md lg:btn-xl">
+    Long Break
+  </button>
+</nav>

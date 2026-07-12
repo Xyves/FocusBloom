@@ -1,0 +1,27 @@
+{
+  "name": "focusbloom",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xyves/FocusBloom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Xyves/FocusBloom/issues"
+  },
+  "homepage": "https://github.com/Xyves/FocusBloom#readme",
+  "dependencies": {
+    "daisyui": "^5.6.16"
+  }
+}

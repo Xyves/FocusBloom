@@ -1,0 +1,35 @@
+<dialog
+  id="settings_modal"
+  data-settings-target="modal"
+  class="modal">
+  <div class="modal-box w-10/12 max-w-xl h-3/5 p-0 flex flex-col " >
+
+    <div class="flex flex-col md:flex-row flex-1 min-h-0">
+      <%= render 'home/settings/settings_panels' %>
+
+      <main class="flex-1 p-6 overflow-y-auto">
+  <%= render 'home/settings/timers_panel' %>
+        <div id="background-panel" class="settings-panel hidden h-full">
+          <%= render 'home/settings/background_panel' %>
+        </div>
+
+        <div id="sounds-panel" class="settings-panel hidden">
+          Sounds settings
+        </div>
+      </main>
+    </div>
+
+    <div class="border-t px-6 py-3 flex justify-end">
+      <button
+        class="btn btn-primary"
+        data-action="click->settings#applySettings">
+        Save
+      </button>
+    </div>
+
+  </div>
+
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
