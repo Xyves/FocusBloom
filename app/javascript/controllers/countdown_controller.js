@@ -44,11 +44,9 @@ export default class extends Controller {
         )
     }
 
-
     get duration() {
         return this.settings[this.currentVariant]
     }
-
 
     start() {
         if (this.remainingSeconds <= 0) return
@@ -72,14 +70,12 @@ export default class extends Controller {
         }, 1000)
     }
 
-
     pause() {
         this.isRunning = false
         this.toggleButtonTarget.textContent = "Start"
 
         clearInterval(this.timerIntervalId)
     }
-
 
     finish() {
         const finishedVariant = this.currentVariant
@@ -96,7 +92,6 @@ export default class extends Controller {
 
         this.start()
     }
-
 
     advanceVariant() {
         if (this.currentVariant === "FOCUS") {
@@ -119,19 +114,16 @@ export default class extends Controller {
         }
     }
 
-
     toggle() {
         this.isRunning
             ? this.pause()
             : this.start()
     }
 
-
     reset() {
         this.pause()
         this.resetDuration()
     }
-
 
     resetDuration() {
         this.remainingSeconds = this.duration
@@ -144,7 +136,6 @@ export default class extends Controller {
         this.updateDisplay()
     }
 
-
     updateDisplay() {
         TimerDisplay.update(
             this.minutesDisplayTarget,
@@ -152,7 +143,6 @@ export default class extends Controller {
             this.remainingSeconds
         )
     }
-
 
     switchVariant(variant) {
         if (!this.settings[variant]) return
@@ -167,7 +157,6 @@ export default class extends Controller {
         this.resetDuration()
     }
 
-
     selectVariant(event) {
         const variant =
             event.currentTarget.dataset.variant
@@ -177,7 +166,6 @@ export default class extends Controller {
         this.pause()
         this.switchVariant(variant)
     }
-
 
     changeVariantDuration(variant, seconds) {
         if (!this.settings[variant] || seconds <= 0) return
@@ -193,7 +181,6 @@ export default class extends Controller {
         }
     }
 
-
     changeLongBreakInterval(value) {
         if (value < 1) return
 
@@ -203,7 +190,6 @@ export default class extends Controller {
             this.settings
         )
     }
-
 
     applySettings(event) {
         const {

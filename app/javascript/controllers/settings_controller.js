@@ -5,7 +5,6 @@ import {SETTINGS_KEY} from "utils/timer_settings";
 
 const toMinutes = (seconds) => seconds / 60
 
-
 export default class extends Controller {
     static targets = ['modal', 'focusDuration', 'shortBreakDuration', 'longBreakDuration', 'longBreakInterval', 'background', 'theme']
 
@@ -100,6 +99,4 @@ export default class extends Controller {
         this.backgroundTarget.style.backgroundImage =
             `url('${theme.image ?? theme}')`
     }
-
-
 }
