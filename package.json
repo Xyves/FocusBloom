@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile"
+    "build": "tailwindcss -i ./app/assets/tailwind/application.css -o ./app/assets/builds/tailwind.css"
   },
   "repository": {
     "type": "git",
