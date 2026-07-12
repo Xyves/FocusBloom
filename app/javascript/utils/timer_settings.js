@@ -5,7 +5,8 @@ export const DEFAULT_SETTINGS = {
     SHORT_BREAK: 10 * 60,
     LONG_BREAK: 40 * 60,
     LONG_BREAK_INTERVAL: 4,
-    VARIANT:"FOCUS"
+    VARIANT:"FOCUS",
+    THEME: "library"
 }
 
 export function readSettings() {

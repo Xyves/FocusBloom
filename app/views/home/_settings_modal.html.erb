@@ -1,8 +1,7 @@
 <dialog
   id="settings_modal"
-  class="modal"
   data-settings-target="modal"
-  data-controller="settings">
+  class="modal">
   <div class="modal-box w-11/12 max-w-xl h-3/5 p-0 flex flex-col " >
 
     <div  class="flex flex-1 min-h-0">
@@ -12,7 +11,7 @@
         <%#= render 'general_panel' %>
   <%= render 'timers_panel' %>
         <div id="background-panel" class="settings-panel hidden h-full">
-          Background settings
+          <%= render 'background_panel' %>
         </div>
 
         <div id="sounds-panel" class="settings-panel hidden">
