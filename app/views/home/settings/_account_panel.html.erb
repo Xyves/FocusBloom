@@ -1,0 +1,16 @@
+<turbo-frame id="account_panel">
+  <div id="account-panel" class="settings-panel">
+    <% if user_signed_in? %>
+      <% if local_assigns[:editing] %>
+        <%= render "home/settings/accounts/edit_account_form", edit_resource: local_assigns[:edit_resource] %>
+      <% else %>
+        <%= render "home/settings/accounts/dashboard" %>
+      <% end %>
+    <% else %>
+      <%= render "home/settings/accounts/auth_tabs",
+                 active_tab: local_assigns[:active_tab],
+                 login_error: local_assigns[:login_error],
+                 signup_resource: local_assigns[:signup_resource] %>
+    <% end %>
+  </div>
+</turbo-frame>

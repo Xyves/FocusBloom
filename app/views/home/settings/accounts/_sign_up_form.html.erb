@@ -1,0 +1,24 @@
+<% if signup_resource&.errors&.any? %>
+  <div class="alert alert-error mb-4">
+    <ul>
+      <% signup_resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: User.new, url: user_registration_path, method: :post do |f| %>
+  <fieldset class="fieldset">
+    <label class="label" for="signup_email">Email</label>
+    <%= f.email_field :email, id: "signup_email", class: "input w-full", autofocus: true, autocomplete: "email" %>
+
+    <label class="label" for="signup_password">Password</label>
+    <%= f.password_field :password, id: "signup_password", class: "input w-full", autocomplete: "new-password" %>
+
+    <label class="label" for="signup_password_confirmation">Confirm password</label>
+    <%= f.password_field :password_confirmation, id: "signup_password_confirmation", class: "input w-full", autocomplete: "new-password" %>
+
+    <%= f.submit "Sign up", class: "btn btn-primary mt-4" %>
+  </fieldset>
+<% end %>

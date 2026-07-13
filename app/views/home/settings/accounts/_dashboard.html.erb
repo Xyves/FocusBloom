@@ -1,0 +1,7 @@
+<div class="dashboard">
+  <p>Signed in as <strong><%= current_user.email %></strong></p>
+  <div class="flex gap-2 mt-2">
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-error" %>
+    <%= button_to "Edit account", account_panel_edit_path, method: :get, class: "btn btn-ghost" %>
+  </div>
+</div>

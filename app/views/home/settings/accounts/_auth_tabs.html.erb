@@ -1,0 +1,13 @@
+<div class="tabs tabs-lift">
+  <input type="radio" name="account_tabs" class="tab" aria-label="Log In"
+         <%= "checked" if active_tab != "signup" %> />
+  <div class="tab-content bg-base-100 border-base-300 p-6">
+    <%= render "home/settings/accounts/login_form", login_error: login_error %>
+  </div>
+
+  <input type="radio" name="account_tabs" class="tab" aria-label="Sign Up"
+         <%= "checked" if active_tab == "signup" %> />
+  <div class="tab-content bg-base-100 border-base-300 p-6">
+    <%= render "home/settings/accounts/sign_up_form", signup_resource: signup_resource %>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<% if login_error %>
+  <div class="alert alert-error mb-4"><span><%= login_error %></span></div>
+<% end %>
+
+<%= form_with model: User.new, url: user_session_path, method: :post do |f| %>
+  <fieldset class="fieldset">
+    <label class="label" for="login_email">Email</label>
+    <%= f.email_field :email, id: "login_email", class: "input w-full", autofocus: true, autocomplete: "email" %>
+
+    <label class="label" for="login_password">Password</label>
+    <%= f.password_field :password, id: "login_password", class: "input w-full", autocomplete: "current-password" %>
+
+    <%= f.submit "Log In", class: "btn btn-primary mt-4" %>
+  </fieldset>
+<% end %>

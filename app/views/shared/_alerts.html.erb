@@ -1,0 +1,14 @@
+<% if flash[:alert] || flash[:notice] %>
+  <div class="toast toast-top toast-center z-50">
+    <% if flash[:alert] %>
+      <div class="alert alert-error">
+        <span><%= flash[:alert] %></span>
+      </div>
+    <% end %>
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <span><%= flash[:notice] %></span>
+      </div>
+    <% end %>
+  </div>
+<% end %>

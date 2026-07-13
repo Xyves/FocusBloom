@@ -1,0 +1,32 @@
+<div class="dashboard">
+  <% if edit_resource&.errors&.any? %>
+    <div class="alert alert-error mb-4">
+      <ul>
+        <% edit_resource.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_with model: current_user, url: user_registration_path, method: :put do |f| %>
+    <fieldset class="fieldset">
+      <label class="label" for="edit_email">Email</label>
+      <%= f.email_field :email, id: "edit_email", class: "input w-full", value: current_user.email %>
+
+      <label class="label" for="edit_password">New password <span class="text-xs opacity-60">(leave blank to keep current)</span></label>
+      <%= f.password_field :password, id: "edit_password", class: "input w-full", autocomplete: "new-password" %>
+
+      <label class="label" for="edit_password_confirmation">Confirm new password</label>
+      <%= f.password_field :password_confirmation, id: "edit_password_confirmation", class: "input w-full", autocomplete: "new-password" %>
+
+      <label class="label" for="edit_current_password">Current password <span class="text-xs opacity-60">(required to save changes)</span></label>
+      <%= f.password_field :current_password, id: "edit_current_password", class: "input w-full", autocomplete: "current-password" %>
+
+      <div class="flex gap-2 mt-4">
+        <%= f.submit "Save changes", class: "btn btn-primary" %>
+        <%= button_to "Cancel", account_panel_path, method: :get, class: "btn btn-ghost" %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
