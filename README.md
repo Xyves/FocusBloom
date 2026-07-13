@@ -1,6 +1,6 @@
 # FocusBloom 
 
-Deployed: [LIVE](https://focusbloom-production.up.railway.app/)
+[LIVE](https://focusbloom-production.up.railway.app/)
 
 
 ## Description:
@@ -13,10 +13,10 @@ Users can start, pause, and reset timers, customize timer lengths, and keep thei
 Key components include:
 
 - **Pomodoro Timer Component**: The main productivity interface where users can start, pause, and reset timers. Users can customize focus and break durations to match their workflow.
-- **Authentication Modal**: Provides login and sign-up functionality without leaving the main page.
-- **Account Management Modal**: Allows authenticated users to edit account information, update passwords, and manage their profile settings.
-- **Timer Settings Component**: Allows users to customize timer lengths and save their preferences.
-- **Background Customization Component**: Lets users change the application background and personalize their focus environment.
+- **Authentication Panel**: Provides login and sign-up functionality without leaving the main page.
+- **Account Management**: Allows authenticated users to update passwords.
+- **Timer Settings Panel**: Allows users to customize timer lengths and save their preferences.
+- **Background Customization Panel**: Lets users change the application background and personalize their focus environment.
 
 
 ## Tech Stack & Features
