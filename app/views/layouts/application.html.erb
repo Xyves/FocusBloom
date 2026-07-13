@@ -21,9 +21,14 @@
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <% if flash.any? %>
+      <meta name="turbo-cache-control" content="no-cache">
+    <% end %>
   </head>
 
-  <body class="min-w-screen  min-h-screen">
+  <body data-theme="dark" class="min-w-screen  min-h-screen">
+  <%= render "shared/alerts" %>
       <%= yield %>
   </body>
 </html>
