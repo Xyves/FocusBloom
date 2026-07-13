@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :pomodoro_sessions, only: [ :create, :update ]
+  devise_for :users, controllers: {
+    sessions: "users/sessions",
+    registrations: "users/registrations"
+  }
+  get "account_panel", to: "home#account_panel"
+  get "account_panel/edit", to: "home#account_panel_edit"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

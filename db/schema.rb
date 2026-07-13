@@ -10,14 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_03_190901) do
-  create_table "pomodoro_sessions", force: :cascade do |t|
+ActiveRecord::Schema[8.1].define(version: 2026_07_13_081007) do
+  create_schema "extensions"
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "extensions.pg_stat_statements"
+  enable_extension "extensions.pgcrypto"
+  enable_extension "extensions.uuid-ossp"
+  enable_extension "pg_catalog.plpgsql"
+  enable_extension "vault.supabase_vault"
+
+  create_table "public.users", force: :cascade do |t|
     t.datetime "created_at", null: false
-    t.date "ended_at"
-    t.integer "planned_duration_seconds", default: 0
-    t.integer "session_type", default: 0, null: false
-    t.date "started_at", default: "2026-07-03"
-    t.integer "status", default: 0, null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.datetime "remember_created_at"
+    t.datetime "reset_password_sent_at"
+    t.string "reset_password_token"
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 end

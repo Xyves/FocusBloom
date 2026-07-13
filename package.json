@@ -24,7 +24,6 @@
   "homepage": "https://github.com/Xyves/FocusBloom#readme",
   "dependencies": {
     "@tailwindcss/cli": "^4.x",
-    "tailwindcss": "^4.x",
     "daisyui": "^5.6.18"
   }
 }
